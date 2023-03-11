@@ -128,7 +128,7 @@ xpath["get_links_from_feed"] = {"get_links": "//*[contains(@class,'c-Yi7')]"}
 xpath["get_links_for_tag"] = {
     "top_elements": "//main/article/div[1]/div[1]/div[1]",
     "main_elem": "//main/article/div[1]/div[1]/div[1]/div[1]",
-    "possible_post": "//div[contains(@class, '_aabd _aa8k _aanf')]",
+    "possible_post": "//span[@class='_ac2a']/span",
 }
 
 
