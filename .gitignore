@@ -119,3 +119,9 @@ Pipfile.lock
 
 # Instances
 z_*
+
+# Portable firefox
+firefox
+
+# Production scripts
+start-*.py
