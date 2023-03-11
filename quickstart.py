@@ -1,20 +1,20 @@
-""" Quickstart script for InstaPy usage """
-
 # imports
 from instapy import InstaPy
 from instapy import smart_run
-from instapy import set_workspace
+import os
 
-
-# set workspace folder at desired location (default is at your home folder)
-set_workspace(path=None)
+tags = ["natgeo"]
 
 # get an InstaPy session!
-session = InstaPy()
+# set headless_browser=True to run InstaPy in the background
+# Script expects firefox to be a portable version located in 'firefox' folder
+session = InstaPy(headless_browser=False,
+                  browser_executable_path=os.getcwd() + "/firefox/firefox",
+                  want_check_browser=False)
 
 with smart_run(session):
-    # general settings
-    session.set_dont_include(["friend1", "friend2", "friend3"])
+  """ Activity flow """		
+  
+  # activity		
+  session.like_by_tags(tags, amount=10)
 
-    # activity
-    session.like_by_tags(["natgeo"], amount=10)
