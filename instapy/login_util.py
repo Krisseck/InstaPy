@@ -252,6 +252,15 @@ def login_user(
     ig_homepage = "https://www.instagram.com"
     web_address_navigator(browser, ig_homepage)
 
+    try:
+        cookie_elem = browser.find_element_by_xpath("//button[text()='Allow essential and optional cookies']")
+    except:
+        cookie_elem = None
+
+    if cookie_elem is not None:
+        logger.info("Clicked cookie dialog")
+        cookie_elem.click()
+
     cookie_file = "{0}{1}_cookie.pkl".format(logfolder, username)
     cookie_loaded = None
     login_state = None
