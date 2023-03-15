@@ -494,6 +494,9 @@ def get_links_for_username(
         )
         return False
 
+    # Go back to profile page after private check
+    web_address_navigator(browser, user_link)
+
     # Get links
     links = []
     main_elem = browser.find_element(By.TAG_NAME, "article")
@@ -506,6 +509,9 @@ def get_links_for_username(
             " there only {} posts available :D".format(amount, person, posts_count)
         )
         amount = posts_count
+
+    # Go back to profile page after getting number of posts
+    web_address_navigator(browser, user_link)
 
     while len(links) < amount:
         initial_links = links

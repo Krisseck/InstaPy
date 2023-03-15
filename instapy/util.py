@@ -89,6 +89,9 @@ def is_private_profile(browser, logger, following=True):
             data = get_key[0]
         else:
             data = get_additional_data(browser)
+    except AttributeError:
+        # Sometimes there is no "entry_data", use the global data then
+        data = shared_data
     finally:
         is_private = data["graphql"]["user"]["is_private"]
 

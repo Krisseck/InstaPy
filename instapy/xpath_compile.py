@@ -133,7 +133,7 @@ xpath["get_links_for_tag"] = {
 
 
 xpath["get_number_of_posts"] = {
-    "num_of_posts_txt": "//section/main/div/ul/li[1]/span/span",
+    "num_of_posts_txt": "//section/main/div/ul/li[1]/div/span/span",
     "num_of_posts_txt_no_such_element": "//section/div[3]/div/header/section/ul/li[1]/span/span",
 }
 
